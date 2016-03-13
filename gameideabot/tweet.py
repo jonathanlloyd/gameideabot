@@ -1,12 +1,19 @@
 """
 A short and simple script that tweets random game ideas
 """
-
 import json
+import os
+import random
+import sys
 import time
 import tweepy
 
+sys.path.insert(0, "./")
+
 from gameideabot import idea_generator
+
+FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_FILE_PATH = os.path.join(FILE_DIR, 'config.json')
 
 
 def load_config():
@@ -14,7 +21,7 @@ def load_config():
     Load api secrets from config file
     """
     try:
-        with open('config.json', 'rb') as config_file:
+        with open(CONFIG_FILE_PATH, 'rb') as config_file:
             config_string = config_file.read()
     except IOError:
         print 'Could not find config file (./config.json)'
@@ -43,8 +50,11 @@ def main():
     """
     Generate a game idea and post it to twitter
     """
-    seed = time.time()
-    idea = idea_generator.generate_game_idea(seed)
+    idea = None
+    while idea is None or len(idea) > 140:
+        seed = time.time()
+        random.seed(seed)
+        idea = idea_generator.generate_game_idea()
 
     config = load_config()
     auth = tweepy.OAuthHandler(
@@ -58,8 +68,13 @@ def main():
     api = tweepy.API(auth)
 
     print idea
-    api.update_status(idea)
 
+    try:
+        api.update_status(idea)
+    except tweepy.error.TweepError, error:
+        print 'Failed trying to post idea to twitter: {}'.format(
+            error.message[0]['message']
+        )
 
 if __name__ == '__main__':
     main()
