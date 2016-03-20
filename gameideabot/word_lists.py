@@ -235,3 +235,14 @@ SETTINGS = [
     'theatre',
 ]
 
+HASHTAGS = [
+    'gamedev',
+    'indiedev',
+    'indiegame',
+    'indiegames',
+    'indie',
+    'gameart',
+    'indiegamedev',
+    'gameideas',
+    'gameidea',
+]

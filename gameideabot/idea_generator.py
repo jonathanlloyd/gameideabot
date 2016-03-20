@@ -14,6 +14,7 @@ from gameideabot.word_lists import (
     ACTIONS,
     ART_STYLES,
     SETTINGS,
+    HASHTAGS,
 )
 
 
@@ -140,6 +141,11 @@ def generate_game_idea():
 
     idea = idea_template(set())
     idea = idea[0].upper() + idea[1:]
+
+    used_tags = set()
+    num_tags = random.randint(0, 3)
+    for _ in range(0, num_tags):
+        idea += ' #{}'.format(pick_word(HASHTAGS, used_tags))
 
     return idea
 
