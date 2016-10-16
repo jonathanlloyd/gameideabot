@@ -23,10 +23,7 @@
 
 import json
 import os
-import sys
 import tweepy
-
-sys.path.insert(0, "./")
 
 from gameideabot import idea_generator
 
