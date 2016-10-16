@@ -26,16 +26,12 @@ import os
 import sys
 import tweepy
 
-from gameideabot import idea_generator
-
 sys.path.insert(0, "./")
+
+from gameideabot import idea_generator
 
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_FILE_PATH = os.path.join(FILE_DIR, 'config.json')
-
-
-if __name__ == '__main__':
-    main()
 
 
 def main():
@@ -107,3 +103,7 @@ def initialize_twitter_api_handler(
         access_secret,
     )
     return tweepy.API(auth)
+
+
+if __name__ == '__main__':
+    main()
