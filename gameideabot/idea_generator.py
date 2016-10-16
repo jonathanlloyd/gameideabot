@@ -37,7 +37,7 @@ PROBABILITY_OF_CHATTY_IDEA = 0.1
 def generate_game_idea():
     """Generate a game idea from a randomly selected template"""
     #Pick template for game idea
-    should_use_chatty_idea = random.random() > PROBABILITY_OF_CHATTY_IDEA
+    should_use_chatty_idea = random.random() < PROBABILITY_OF_CHATTY_IDEA
 
     if should_use_chatty_idea:
         template_list = CHATTY_IDEA_TEMPLATES
