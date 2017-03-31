@@ -68,3 +68,8 @@ def make_idea_from_template(template):
 def uppercase_first_letter(string):
     """Return a copy of the given string with the first letter in uppercase"""
     return string[0].upper() + string[1:]
+
+
+if __name__ == '__main__':
+    for _ in range(0, 10):
+        print generate_game_idea()
