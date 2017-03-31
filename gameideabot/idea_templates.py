@@ -87,6 +87,15 @@ NORMAL_IDEA_TEMPLATES = [
         util.pick_word(SETTINGS, seen_words),
         util.pick_word(ACTIONS, seen_words),
     ),
+    lambda seen_words: 'In this {}-styled {} game, {} {} {} {} {}.'.format(
+        util.pick_word(ART_STYLES, seen_words),
+        util.pick_word(GENRES, seen_words),
+        util.a_an(util.pick_word(CHARACTER_ADJECTIVES, seen_words)),
+        util.pick_word(CHARACTERS, seen_words),
+        util.pick_word(PRESENT_VERBS, seen_words),
+        util.a_an(util.pick_word(CHARACTER_ADJECTIVES, seen_words)),
+        util.pick_word(CHARACTERS, seen_words),
+    ),
 ]
 
 # These idea templates are more "chatty" but get repetative quickly.
@@ -117,6 +126,19 @@ CHATTY_IDEA_TEMPLATES = [
     ),
     lambda seen_words: 'Game mechanic idea - before you can {} ' \
     'you must {}.'.format(
+        util.pick_word(ACTIONS, seen_words),
+        util.pick_word(ACTIONS, seen_words),
+    ),
+    lambda seen_words: 'In a world where an evil {} is going to {}, can you ' \
+    '{} before it is too late?'.format(
+        util.pick_word(CHARACTERS, seen_words),
+        util.pick_word(ACTIONS, seen_words),
+        util.pick_word(ACTIONS, seen_words),
+    ),
+    lambda seen_words: 'All {} games are the same these days - ' \
+    '{}, {}. What if you {} instead?'.format(
+        util.pick_word(GENRES, seen_words),
+        util.pick_word(ACTIONS, seen_words),
         util.pick_word(ACTIONS, seen_words),
         util.pick_word(ACTIONS, seen_words),
     ),

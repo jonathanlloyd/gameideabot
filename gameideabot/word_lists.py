@@ -162,6 +162,14 @@ PRESENT_VERBS = [
     'avoids',
     'controls',
     'explores the deeper meaning of',
+    'builds',
+    'goes on an adventure with',
+    'has a deep and meaningful conversation with',
+    'gets drunk with',
+    'has an existential crisis because of',
+    'rules the world using',
+    'falls in love with',
+    'discovers their best friend is',
 ]
 
 ACTIONS = [
@@ -197,6 +205,12 @@ ACTIONS = [
     'protect your base',
     'sweep enemy bases',
     'capture enemies',
+    'control enemy characters',
+    'play an awesome solo on a rock band controller',
+    'unlock all the achievements',
+    'break into a secret area',
+    'fight off an alien invasion',
+    'bring about the end of the world',
 ]
 
 ART_STYLES = [
