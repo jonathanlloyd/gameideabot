@@ -231,7 +231,7 @@ ART_STYLES = [
     'steampunk',
     'dieselpunk',
     'victorian',
-    'cyperpunk',
+    'cypherpunk',
     'neon',
     'water colour',
     'fairytale',
