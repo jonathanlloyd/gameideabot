@@ -98,7 +98,7 @@ NORMAL_IDEA_TEMPLATES = [
     ),
 ]
 
-# These idea templates are more "chatty" but get repetative quickly.
+# These idea templates are more "chatty" but get repetitive quickly.
 # They should be used less often.
 CHATTY_IDEA_TEMPLATES = [
     lambda seen_words: 'What if {} game was set in {}?'.format(
