@@ -101,6 +101,10 @@ CHARACTERS = [
     'sorceress',
     'witch',
     'vampire',
+    'icy blue dragon',
+    'zombie with no conscience',
+    'peasant girl',
+    'pizza delivery man',
 ]
 
 CHARACTER_ADJECTIVES = [
@@ -124,6 +128,7 @@ CHARACTER_ADJECTIVES = [
     'fourth wall breaking',
     'reactionary',
     'spell-casting',
+    'undead',
 ]
 
 THINGS = [
@@ -243,6 +248,7 @@ ART_STYLES = [
     'dystopian',
     'under water',
     'medieval',
+    'cel shaded',
 ]
 
 SETTINGS = [
@@ -266,6 +272,9 @@ SETTINGS = [
     'school for mutants',
     'secret government science lab',
     'theatre',
+    'dying world',
+    'racetrack',
+    'desolate wasteland',
 ]
 
 HASHTAGS = [
@@ -278,4 +287,22 @@ HASHTAGS = [
     'indiegamedev',
     'gameideas',
     'gameidea',
+]
+
+RESOURCES = [
+    'lives',
+    'food',
+    'health',
+    'coins',
+    'gems',
+    'points',
+    'potions',
+    'souls',
+    'units',
+    'stamina',
+    'arrows',
+    'bullets',
+    'missiles',
+    'pizza',
+    'materials',
 ]
