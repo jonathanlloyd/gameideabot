@@ -104,7 +104,8 @@ NORMAL_IDEA_TEMPLATES = [
         util.a_an(util.pick_word(ART_STYLES, seen_words)),
         util.pick_word(GENRES, seen_words),
     ),
-    lambda seen_words: 'In this game, the player must guide {} through {} to gather {} for their {}'.format(
+    lambda seen_words: 'In this game, the player must guide {} through {}' \ 
+    ' to gather {} for their {}'.format(
         util.a_an(util.pick_word(CHARACTERS, seen_words)),
         util.a_an(util.pick_word(SETTINGS, seen_words)),
         util.pick_word(RESOURCES, seen_words),
