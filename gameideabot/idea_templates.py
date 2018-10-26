@@ -32,7 +32,7 @@ from gameideabot.word_lists import (
     ACTIONS,
     ART_STYLES,
     SETTINGS,
-    RESOURCES
+    RESOURCES,
 )
 
 
