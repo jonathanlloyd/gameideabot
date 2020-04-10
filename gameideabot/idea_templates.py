@@ -164,4 +164,19 @@ CHATTY_IDEA_TEMPLATES = [
         util.pick_word(ACTIONS, seen_words),
         util.a_an(util.pick_word(SETTINGS, seen_words)),
     ),
+
+    # TEMP COVID TEMPLATES
+    lambda seen_words: 'Bored? Make {} {} game about {} ' \
+    'stuck in quarantine with {}'.format(
+        util.a_an(util.pick_word(ADJECTIVES, seen_words)),
+        util.pick_word(GENRES, seen_words),
+        util.a_an(util.pick_word(CHARACTERS, seen_words)),
+        util.a_an(util.pick_word(THINGS, seen_words)),
+    ),
+    lambda seen_words: 'Stay entertained in isolation by running a remote game jam! ' \
+    'The theme could be: {} {} games set in {}'.format(
+        util.pick_word(ADJECTIVES, seen_words),
+        util.pick_word(GENRES, seen_words),
+        util.a_an(util.pick_word(SETTINGS, seen_words)),
+    ),
 ]
