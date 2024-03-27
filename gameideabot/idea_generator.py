@@ -52,7 +52,7 @@ def generate_game_idea():
     #Append hashtags
     number_of_hash_tags = random.randint(0, MAX_HASH_TAGS)
     used_hash_tags = set()
-    for _ in xrange(0, number_of_hash_tags):
+    for _ in range(0, number_of_hash_tags):
         idea += ' #{}'.format(util.pick_word(HASHTAGS, used_hash_tags))
 
     return idea
@@ -72,4 +72,4 @@ def uppercase_first_letter(string):
 
 if __name__ == '__main__':
     for _ in range(0, 10):
-        print generate_game_idea()
+        print(generate_game_idea())

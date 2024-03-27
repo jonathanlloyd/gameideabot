@@ -1,4 +1,4 @@
-FROM python:2.7.18-stretch
+FROM python:3.12-bullseye
 ARG CONSUMER_KEY
 ARG CONSUMER_SECRET
 ARG ACCESS_KEY

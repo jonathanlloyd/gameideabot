@@ -38,21 +38,19 @@ def main():
         idea = idea_generator.generate_game_idea()
 
     config = load_config()
-    twitter_api_handler = initialize_twitter_api_handler(
+    twitter_client = tweepy.Client(
         consumer_key=config['consumer_key'],
         consumer_secret=config['consumer_secret'],
-        access_key=config['access_key'],
-        access_secret=config['access_secret'],
+        access_token=config['access_key'],
+        access_token_secret=config['access_secret'],
     )
 
-    print idea
+    print(idea)
 
     try:
-        twitter_api_handler.update_status(idea)
-    except tweepy.error.TweepError, tweep_error:
-        print 'Failed trying to post idea to twitter: {}'.format(
-            tweep_error.message[0]['message']
-        )
+        twitter_client.create_tweet(text=idea)
+    except Exception as e:
+        print(f'Failed trying to post idea to twitter: {e}')
 
 
 def load_config():
@@ -61,13 +59,13 @@ def load_config():
         with open(CONFIG_FILE_PATH, 'rb') as config_file:
             config_string = config_file.read()
     except IOError:
-        print 'Could not find config file (./config.json)'
+        print('Could not find config file (./config.json)')
         exit(1)
 
     try:
         config = json.loads(config_string)
     except ValueError:
-        print 'Could not load config file (invalid JSON)'
+        print('Could not load config file (invalid JSON)')
         exit(1)
 
     is_valid_config = all([
@@ -78,28 +76,10 @@ def load_config():
     ])
 
     if not is_valid_config:
-        print 'Could not read config properties from config file'
+        print('Could not read config properties from config file')
         exit(1)
 
     return config
-
-
-def initialize_twitter_api_handler(
-        consumer_key,
-        consumer_secret,
-        access_key,
-        access_secret,
-    ):
-    """Create and initialize a handler for the twitter API"""
-    auth = tweepy.OAuthHandler(
-        consumer_key,
-        consumer_secret,
-    )
-    auth.set_access_token(
-        access_key,
-        access_secret,
-    )
-    return tweepy.API(auth)
 
 
 if __name__ == '__main__':
